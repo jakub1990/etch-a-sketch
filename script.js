@@ -4,6 +4,10 @@ const createBtn = document.querySelector('.create');
 
 function createGrid() {
     const gridCounter = prompt('How many columns and rows?');
+    if(gridCounter > 100) {
+        alert('You inserted too big number- only up to 100 is allowed!');
+        return;
+    }
     for(let column = 0; column < gridCounter; column++){
         for(let row = 0; row < gridCounter; row++) {
             const rowDiv = document.createElement('div');
@@ -12,8 +16,8 @@ function createGrid() {
         }
     }
     grid.style.display = `grid`;
-    grid.style.gridTemplateColumns = `repeat(${gridCounter}, ${960/gridCounter}px)`;
-    grid.style.gridTemplateRows = `repeat(${gridCounter}, ${960/gridCounter}px)`;
+    grid.style.gridTemplateColumns = `repeat(${gridCounter}, ${1000/gridCounter}px)`;
+    grid.style.gridTemplateRows = `repeat(${gridCounter}, ${1000/gridCounter}px)`;
     const squares = document.querySelectorAll('.item');
 
 squares.forEach(square => {

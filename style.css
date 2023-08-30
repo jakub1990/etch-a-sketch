@@ -1,6 +1,16 @@
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin-right: 15px;
+}
 
 .grid {
-    width: 1000px;
+    margin: 100px;
+    display: flex;
+    justify-content: center;
   }
 
 
