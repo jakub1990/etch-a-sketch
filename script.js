@@ -22,7 +22,12 @@ function createGrid() {
 
 squares.forEach(square => {
   square.addEventListener('mouseenter', function() {
-    square.classList.add('hover');
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    const color = `${r},${g},${b}`;
+    square.style.backgroundColor = `rgb(${color})`;
+
   });
 });
 
