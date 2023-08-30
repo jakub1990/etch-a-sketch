@@ -1,10 +1,35 @@
 const grid = document.querySelector('.grid');
+const resetBtn = document.querySelector('.reset');
+const createBtn = document.querySelector('.create');
 
-for(let column = 0; column < 16; column++){
-    const columnDiv = document.createElement('div');
-    grid.appendChild(columnDiv);
-    for(let row = 0; row < 16; row++) {
-        const rowDiv = document.createElement('div');
-        grid.appendChild(rowDiv);
+function createGrid() {
+    const gridCounter = prompt('How many columns and rows?');
+    for(let column = 0; column < gridCounter; column++){
+        for(let row = 0; row < gridCounter; row++) {
+            const rowDiv = document.createElement('div');
+            rowDiv.classList.add('item');
+            grid.appendChild(rowDiv);
+        }
     }
+    grid.style.display = `grid`;
+    grid.style.gridTemplateColumns = `repeat(${gridCounter}, ${960/gridCounter}px)`;
+    grid.style.gridTemplateRows = `repeat(${gridCounter}, ${960/gridCounter}px)`;
+    const squares = document.querySelectorAll('.item');
+
+squares.forEach(square => {
+  square.addEventListener('mouseenter', function() {
+    square.classList.add('hover');
+  });
+});
+
 }
+
+
+
+
+resetBtn.addEventListener('click', function(){
+  grid.innerHTML = '';
+});
+
+createBtn.addEventListener('click', createGrid);
+

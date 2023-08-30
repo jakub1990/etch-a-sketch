@@ -1,13 +1,14 @@
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(16,50px);
-    grid-template-rows: repeat(16, 50px);
-    gap: 15px;
+    width: 1000px;
   }
 
 
  .grid > div {
-    background: gray;
     border: 2px solid black;
+}
+
+
+.hover {
+  background: gray;
 }
